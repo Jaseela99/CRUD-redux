@@ -20,7 +20,6 @@ const renderCard=()=>
             </div>
             </div>
     ))
-
 const UserList = () => {
   return (
     <div>
