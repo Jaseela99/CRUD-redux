@@ -1,19 +1,13 @@
 import React from 'react'
+import {useSelector} from "react-redux"
 import { Link } from 'react-router-dom'
 import Button from '../../Components/Button'
-export const users =[
-{
-id:1,
-name:"jaseela",
-email:"jaseela@gmail.com"
-},
-{
-id:2,
-name:"jaseena",
-email:"jaseena@gmail.com"
-}
-]
-const renderCard=()=>
+
+
+const UserList = () => {
+  const users=useSelector(store=>store.users)
+
+  const renderCard=()=>
     users.map((user)=>(
         <div key={user.id} className='bg-gray-300 p-5 flex items-center justify-between'>
             <div>
@@ -35,7 +29,6 @@ const renderCard=()=>
 </div>
             </div>
     ))
-const UserList = () => {
   return (
     <div>
       <Link to="/adduser">
@@ -51,3 +44,4 @@ const UserList = () => {
 }
 
 export default UserList
+
